@@ -1,0 +1,34 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env
+
+# IDE settings
+.idea/
+.idea
+.vscode/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pipenv lock
+Pipfile.lock
+Pipfile
+
+# Alembic & migrations
+alembic.ini
+migrations/
+alembic/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
