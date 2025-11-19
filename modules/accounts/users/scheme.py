@@ -5,6 +5,15 @@ from pydantic import BaseModel, Field, field_validator
 from uuid import UUID
 
 
+class Token(BaseModel):
+    model_config = {
+        'extra': 'forbid'
+    }
+
+    access_token: str
+    token_type: str = 'bearer'
+
+
 class UserOut(BaseModel):
     model_config = {
         'from_attributes': True
