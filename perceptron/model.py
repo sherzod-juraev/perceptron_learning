@@ -9,15 +9,13 @@ class Perceptron:
         self.eta = learning_rate
         self.n_iter = n_iter
         self.weights = None
-        self.bias = round(uniform(-.01, .01).item(), 4)
-        self.classes = None
+        self.bias = round(uniform(-.01, .01), 4)
 
     def fit(self, X: ndarray, Y: ndarray, /) -> bool:
 
         preprocessing(X, Y)
-        self.classes = unique(Y)
         self.initialize_weight(X.shape[1])
-        length = X.shape[0]
+        length = int(X.shape[0])
         for i in range(self.n_iter):
             result = True
             for j in range(length):
@@ -40,8 +38,8 @@ class Perceptron:
 
     def predict(self, X: ndarray, /) -> int:
 
-        z = self.classes[0] if self.net_input(X) >= 0 else self.classes[1]
-        return int(z)
+        z = 1 if self.net_input(X) >= 0 else -1
+        return z
 
     def update_features(self, X: ndarray, error: int, /):
 

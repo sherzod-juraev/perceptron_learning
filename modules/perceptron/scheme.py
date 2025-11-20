@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 class PerceptronOut(BaseModel):
 
-    fit: str = True
+    fit: bool = True
     weights: list[float]
 
 
