@@ -64,7 +64,7 @@ async def delete(
         /
 ) -> None:
     user_db = await verify(db, user_id)
-    verify_fields(user_db, user_scheme)
+    await verify_fields(user_db, user_scheme)
     await db.delete(user_db)
     try:
         await db.commit()
