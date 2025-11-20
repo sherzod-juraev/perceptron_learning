@@ -1,11 +1,10 @@
-from numpy import array, ndarray, float64, dot, unique
+from numpy import ndarray, float64, dot, unique
 from .preprocessing import preprocessing
-from fastapi import HTTPException, status
 from numpy.random import uniform
 
 
 class Perceptron:
-    def __init__(self, learning_rate: float, n_iter: int, /):
+    def __init__(self, learning_rate: float = .1, n_iter: int = 10_000, /):
 
         self.eta = learning_rate
         self.n_iter = n_iter
