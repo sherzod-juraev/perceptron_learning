@@ -4,6 +4,12 @@ from fastapi import HTTPException, status
 
 
 def preprocessing(X: array, Y: array, /):
+
+    if X.ndim() != 2:
+        raise HTTPException(
+            status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
+            detail='A 2D matrix must be inserted into X'
+        )
     if isnan(X).any():
         raise HTTPException(
             status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
